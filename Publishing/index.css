@@ -147,8 +147,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Noto Sans', sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.03em;
 }
 
 /* common */
@@ -226,7 +225,10 @@ body{
 button:active{
   opacity: 0.5;
 }
+
+/* login */
 header{
+	overflow: hidden;
   margin: 44px 0px 30px 0px
 }
 .bt_back{
@@ -319,3 +321,70 @@ header{
   width: 100%;
   background: #fff;
 }
+/* //login */
+
+/* category */
+header .bt_back{
+  float: left;
+	margin-top: 2%;
+}
+header span{
+  float: left;
+	margin-left: 16px;
+	font-size: 1.875em;
+}
+.text_box{
+	padding: 0 29px;
+}
+.text_box p:nth-of-type(1){
+	margin-bottom: 70px;
+	font-size: 1.3125em;
+	line-height: 1.875em;
+}
+.text_box p:nth-of-type(2){
+	color: rgba(51, 51, 51, 0.4);
+	font-size: 1.25em;
+	line-height: 1.75em;
+}
+.text_box p:nth-of-type(3){
+	color: rgba(51, 51, 51, 0.4);
+	font-size: 1em;
+	line-height: 1.75em;
+}
+.box{
+	margin-bottom: 30px;
+	padding: 30px 20px;
+	background: #FFFFFF;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);
+	border-radius: 2px;
+}
+.box:last-child{
+	margin-bottom: 0px;
+}
+.box .title{
+	margin-bottom: 24px;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.check_list{
+	overflow: hidden;
+	margin-bottom: 24px;
+}
+.check_list:last-child{
+	margin-bottom: 0px;
+}
+.check_list input[type="checkbox"]{
+	display: none;
+}
+.check_list label{
+	padding-top: 3px;
+	padding-left: 30px;
+	font-size: 1.375em;
+	background: #fff url(images/bt_check_off.png) no-repeat left center/20px 20px;
+}
+.check_list input[type="checkbox"]:checked~label{
+	color: rgba(51,51,51,0.3);
+	text-decoration: line-through rgba(51,51,51,0.3);
+	background: #fff url(images/bt_check_on.png) no-repeat left center/20px 20px;
+}
+/* //category */
