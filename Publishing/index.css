@@ -380,11 +380,29 @@ header span{
 	padding-top: 3px;
 	padding-left: 30px;
 	font-size: 1.375em;
-	background: #fff url(images/bt_check_off.png) no-repeat left center/20px 20px;
+	background: url(images/bt_check_off.png) no-repeat left center/20px 20px;
 }
 .check_list input[type="checkbox"]:checked~label{
 	color: rgba(51,51,51,0.3);
 	text-decoration: line-through rgba(51,51,51,0.3);
-	background: #fff url(images/bt_check_on.png) no-repeat left center/20px 20px;
+	background: url(images/bt_check_on.png) no-repeat left center/20px 20px;
+}
+.bg_health{
+	background: url(images/ico_health.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_diet{
+	background: url(images/ico_diet.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_self_dev{
+	background: url(images/ico_self_dev.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_invest{
+	background: url(images/ico_invest.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_religion{
+	background: url(images/ico_religion.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_ect{
+	background: url(images/ico_ect.png) no-repeat bottom 20px right 20px /76px 76px;
 }
 /* //category */
