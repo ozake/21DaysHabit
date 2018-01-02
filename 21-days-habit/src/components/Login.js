@@ -38,7 +38,7 @@ export default class Login extends Component {
             </section>
             <section className="input_box">
               <label for="password">Password</label>
-              <input type="text" ref={(pw) => this.pw = pw} placeholder="비밀번호를 입력해주세요" id="password" />
+              <input type="password" ref={(pw) => this.pw = pw} placeholder="비밀번호를 입력해주세요" id="password" />
             </section>
           </section>
           {
