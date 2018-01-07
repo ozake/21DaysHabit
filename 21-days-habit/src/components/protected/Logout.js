@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { login, resetPassword, facebookAuth, logout, currentUser } from '../../helpers/auth'
 import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
+import Header from '../Header'
 
 /*
 function setErrorMsg(error) {
@@ -42,12 +43,13 @@ export default class Logout extends Component {
     return (
       <BrowserRouter>
       <div>
+        <Header title='' />
         <div className="tit_style1">Log out</div>
         <form onSubmit={this.handleSubmit}>
           <section className="input_wrap">
             <section className="input_box">
               <label for="email">E-mail</label>
-              <input type="text" value={this.state.userEmail} placeholder="이메일을 입력해주세요" id="email" readonly />
+              <input type="text" value={this.state.userEmail} placeholder="이메일을 입력해주세요" id="email" readOnly />
             </section>
           </section>
           <section className="bt_wrap_hor_box">

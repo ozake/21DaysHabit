@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { login, resetPassword, facebookAuth } from '../helpers/auth'
+import Header from './Header'
 
 function setErrorMsg(error) {
   return {
@@ -29,11 +30,12 @@ export default class Login extends Component {
   render () {
     return (
       <div>
+      <Header title='' />
         <div className="tit_style1">Log in</div>
         <form onSubmit={this.handleSubmit}>
           <section className="input_wrap">
             <section className="input_box">
-              <label for="email">E-mail</label>
+              <label htmlFor="email">E-mail</label>
               <input type="text" ref={(email) => this.email = email} placeholder="이메일을 입력해주세요" id="email" />
             </section>
             <section className="input_box">

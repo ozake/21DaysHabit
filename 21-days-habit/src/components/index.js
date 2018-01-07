@@ -4,7 +4,7 @@ import Login from './Login'
 import Logout from './protected/Logout'
 //import Register from './Register'
 import Home from './Home'
-//import Dashboard from './protected/Dashboard'
+import Dashboard from './protected/Dashboard'
 //import { logout } from '../helpers/auth'
 import { firebaseAuth } from '../config/constants'
 
@@ -57,13 +57,11 @@ export default class App extends Component {
     return this.state.loading === true ? <h1>Loading</h1> : (
       <BrowserRouter>
         <div>
-          <header>
-            <button type="button" name="button" className="bt_back"></button>
-          </header>
             <Switch>
               <Route path='/' exact component={Home} />
               <PublicRoute authed={this.state.authed} path='/login' component={Login} />
               <PrivateRoute authed={this.state.authed} path='/logout' component={Logout} />
+              <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
               <Route render={() => <h3>No Match</h3>} />
             </Switch>
         </div>
