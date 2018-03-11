@@ -5,6 +5,8 @@ import Logout from './protected/Logout'
 //import Register from './Register'
 import Home from './Home'
 import Dashboard from './protected/Dashboard'
+import Main from './protected/Main'
+import AddList from './protected/AddList'
 //import { logout } from '../helpers/auth'
 import { firebaseAuth } from '../config/constants'
 
@@ -25,7 +27,7 @@ function PublicRoute ({component: Component, authed, ...rest}) {
       {...rest}
       render={(props) => authed === false
         ? <Component {...props} />
-        : <Redirect to='/dashboard' />}
+        : <Redirect to='/main' />}
     />
   )
 }
@@ -62,6 +64,8 @@ export default class App extends Component {
               <PublicRoute authed={this.state.authed} path='/login' component={Login} />
               <PrivateRoute authed={this.state.authed} path='/logout' component={Logout} />
               <PrivateRoute authed={this.state.authed} path='/dashboard' component={Dashboard} />
+              <PrivateRoute authed={this.state.authed} path='/main' component={Main} />
+              <PrivateRoute authed={this.state.authed} path='/addlist' component={AddList} />
               <Route render={() => <h3>No Match</h3>} />
             </Switch>
         </div>

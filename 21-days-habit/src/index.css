@@ -215,21 +215,22 @@ hr {
 }
 input, select {
     vertical-align: middle;
+		background: none;
 }
-input::-webkit-input-placeholder{
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 	color: rgba(51,51,51,0.3);
 }
 body{
   padding: 0 25px 80px 25px;
 }
-button:active{
+button:active, a:active{
   opacity: 0.5;
 }
 
 /* login */
 header{
 	overflow: hidden;
-  margin: 44px 0px 30px 0px
+  margin: 30px 0px;
 }
 .bt_back{
   width: 12px;
@@ -323,16 +324,123 @@ header{
 }
 /* //login */
 
-/* category */
+/* header */
 header .bt_back{
   float: left;
-	margin-top: 2%;
+	margin-top: 4%;
+	margin-right: 16px;
 }
 header span{
   float: left;
-	margin-left: 16px;
 	font-size: 1.875em;
 }
+header div{
+	display: flex;
+	float: right;
+	margin-top: 2%;
+}
+header div a{
+	width: 24px;
+	height: 24px;
+}
+header div a:first-child{
+	margin-right: 20px;
+}
+header div a img{
+	width: 100%;
+	height: 100%;
+}
+/* //header */
+
+/* main */
+.list_header{
+	position: relative;
+	display: flex;
+	margin-bottom: 32px;
+	width: 100%;
+	justify-content: space-between;
+}
+nav{
+	display: flex;
+}
+nav input{
+	display: none;
+}
+nav label{
+	color: rgba(51,51,51,0.5);
+	font-size: 1.125em;
+}
+nav label:last-child{
+	margin-left: 22px;
+}
+nav input[type="radio"]:nth-child(1):checked~label:nth-of-type(1), nav input[type="radio"]:nth-child(2):checked~label:nth-of-type(2){
+	color: rgb(51,51,51);
+}
+nav label span:last-child{
+	margin-left: 1%;
+}
+.select input{
+	display: none;
+}
+.select label{
+	color: rgba(51,51,51,0.5);
+	padding-right: 16px;
+	background: url(images/ico_triangle.png) no-repeat right center/10px 8px;
+}
+.select input:checked~.list_view_type{
+	display: inline-block;
+}
+.select .list_view_type{
+	display: none;
+	position: absolute;
+	top:40px;
+	right: 0px;
+	z-index: 10;
+	padding: 16px 20px;
+	background: rgb(255,255,255);
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);
+}
+.select .list_view_type button{
+	display: block;
+	color: rgba(51,51,51,0.5);
+	font-size: 1.125em;
+}
+.select .list_view_type button:last-child{
+	margin-top: 26px;
+}
+.check_list_wrap{
+	display: flex;
+	justify-content: space-between;
+}
+.check_list2 input{
+	display: none;
+}
+.check_list2 label.bookmark{
+	padding-top: 3px;
+	padding-left: 30px;
+	width: 16px;
+	height: 22px;
+	font-size: 1.375em;
+	background: url(images/bt_bookmark_off.png) no-repeat left center/16px 22px;
+}
+.check_list2 input[type="checkbox"]:checked~label{
+	color: rgba(51,51,51,0.3);
+	text-decoration: line-through rgba(51,51,51,0.3);
+	background: url(images/bt_bookmark_on.png) no-repeat left center/16px 22px;
+}
+.bt_add{
+	position: fixed;
+	right: 22px;
+	bottom: 22px;
+	width: 62px;
+	height: 62px;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.20);
+	border-radius: 50%;
+	background: #597AC8 url(images/ico_plus.png) no-repeat center/32px 32px;
+}
+/* //main */
+
+/* category */
 .text_box{
 	padding: 0 29px;
 }
@@ -368,7 +476,7 @@ header span{
 }
 .check_list{
 	overflow: hidden;
-	margin-bottom: 24px;
+	margin-bottom: 26px;
 }
 .check_list:last-child{
 	margin-bottom: 0px;
@@ -380,11 +488,84 @@ header span{
 	padding-top: 3px;
 	padding-left: 30px;
 	font-size: 1.375em;
-	background: #fff url(images/bt_check_off.png) no-repeat left center/20px 20px;
+	background: url(images/bt_check_off.png) no-repeat left center/20px 20px;
 }
 .check_list input[type="checkbox"]:checked~label{
 	color: rgba(51,51,51,0.3);
 	text-decoration: line-through rgba(51,51,51,0.3);
-	background: #fff url(images/bt_check_on.png) no-repeat left center/20px 20px;
+	background: url(images/bt_check_on.png) no-repeat left center/20px 20px;
+}
+.bg_health{
+	background: url(images/ico_health.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_diet{
+	background: url(images/ico_diet.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_self_dev{
+	background: url(images/ico_self_dev.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_invest{
+	background: url(images/ico_invest.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_religion{
+	background: url(images/ico_religion.png) no-repeat bottom 20px right 20px /76px 76px;
+}
+.bg_ect{
+	background: url(images/ico_ect.png) no-repeat bottom 20px right 20px /76px 76px;
 }
 /* //category */
+
+/* all_list */
+textarea{
+	width: 100%;
+	font-size: 1.375em;
+}
+.input_wrap2{
+	display: flex;
+	justify-content:space-between;
+}
+.input_box2 label{
+	display: inline-block;
+	margin-bottom: 20px;
+	font-size: 1.125em;
+}
+.input_box2 input{
+	display: inline-block;
+	padding-bottom: 6px;
+	font-size: 1.375em;
+	border-bottom: 1px solid rgba(51,51,51,0.3);
+}
+.input_wrap2 .input_box2:first-child{
+	margin-right: 10px;
+	padding-right: 30px;
+	background: url(images/ico_arrow.png) no-repeat bottom 20px right /20px 15px;
+}
+.input_wrap3{
+	margin-top: 84px;
+}
+.input_wrap3 .title{
+	margin-bottom: 20px;
+	font-size: 1.125em;
+}
+.input_wrap3 .input_box3 input{
+	display: none;
+}
+.input_wrap3 .input_box3 label{
+	display: block;
+	margin-bottom: 10px;
+	color: rgba(51,51,51,0.3);
+	font-size: 1.375em;
+}
+.input_wrap3 .input_box3 input:nth-of-type(1):checked~label:nth-of-type(1), .input_wrap3 .input_box3 input:nth-of-type(2):checked~label:nth-of-type(2){
+	color: rgb(51,51,51);
+}
+.bt_bottom{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	display: block;
+	padding: 18px 0;
+	width: 100%;
+	font-size: 1.25em;
+}
+/* //all_list */
