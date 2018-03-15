@@ -31,11 +31,10 @@ export default class DateSelectBox extends Component {
     this.props.onSelect(event.target.value, this.props.lebel)
 
   }
-
   render () {
     return (
       <div className="input_box2">
-        <label HtmlFor="">{this.props.lebel}</label>
+        <label>{this.props.lebel}</label>
         <input type="date" value={ (this.props.lebel == "Start") ? this.state.startDate : this.state.endDate } onChange={this.dateChange} min={this.state.startDate} />
       </div>
     )
