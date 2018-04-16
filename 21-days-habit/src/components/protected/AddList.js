@@ -17,9 +17,10 @@ export default class AddList extends Component {
     }
     this.habitDateChange = this.habitDateChange.bind(this)
     this.habitCategoryChange = this.habitCategoryChange.bind(this)
+    this.state = { redirect: false };
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event){
     if(this.refs.habitName.value === '' ){
       alert("습관명을 입력해주세요.")
     }else if(this.state.categoryName === ''){
@@ -27,32 +28,18 @@ export default class AddList extends Component {
     }else{
       event.preventDefault()
       let refs = this.refs
-      // alert(refs.habitName.value)
-      // alert(this.state.habitStartDate)
-      // alert(this.state.habitEndDate)
       let submitData = {
         habitName : refs.habitName.value,
         habitStartDate : this.state.habitStartDate,
         habitEndDate : this.state.habitEndDate,
         categoryName : this.state.categoryName
       }
-      //console.log(submitData)
       const model = new habitModel()
-      let flag = model.habitInsert(submitData)
-      if(flag){
-        return ( <Redirect to='/main' /> )
-      }else{
-        console.log(model.error)
-        alert("OMG!! 문제가 발생했어요! 다시시도해주세요~")
-      }
+      model.habitInsert(submitData)
+      this.setState({
+          redirect: true
+      })
     }
-
-
-
-    // habitInsert(this.habit)
-    //   .catch((error) => {
-    //       this.setState(setErrorMsg('Invalid username/password.'))
-    //     })
   }
 
   habitDateChange(date,flag) {
@@ -73,6 +60,11 @@ export default class AddList extends Component {
 
 
   render () {
+    const { redirect } = this.state.redirect
+
+     if (redirect) {
+       return <Redirect to='/main'/>
+     }
     return (
         <div>
           <Header title='' />
